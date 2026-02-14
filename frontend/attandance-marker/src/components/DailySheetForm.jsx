@@ -10,7 +10,7 @@ export default function DailySheetForm({
       {/* Daily Download Section */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-4">
-          <div className="p-3 bg-gradient-to-r from-purple-600 to-purple-700 rounded-xl">
+          <div className="p-3 bg-[#FF9500] rounded-xl">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -40,7 +40,7 @@ export default function DailySheetForm({
             </div>
           </div>
           <button 
-            className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2" 
+            className="w-full bg-[#FF9500] hover:bg-[#FF8500] text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"  
             type="submit"
             disabled={dailyDownloadLoading}
           >

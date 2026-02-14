@@ -81,39 +81,7 @@ export default function Admin(){
      }
     }
  
-    const handleDeleteEmployee = async (e) => {
-      e.preventDefault();
-      console.log("empid: ",deleteEmpId);
-      if (!deleteEmpId.trim()) {
-        showToast("Please enter an Employee ID to delete", "error");
-        return;
-      }
 
-      const webtoken = sessionStorage.getItem("webtoken");
-      setDeleteLoading(true);
-      try {
-        const res = await fetch(`https://attendance-system-k7rg.onrender.com/emp/delete/${deleteEmpId}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${webtoken}`
-          }
-        });
-
-        const deleteResult = await res.json();
-        
-        if (res.ok) {
-          showToast(deleteResult.message || "Employee deleted successfully!", "success");
-          setDeleteEmpId("");
-        } else {
-          showToast(deleteResult.message || "Failed to delete employee", "error");
-        }
-      } catch (error) {
-        showToast("Server error. Please try again later.", "error");
-      } finally {
-        setDeleteLoading(false);
-      }
-    }
 
     const handleprintingdata=async (e)=>{
       e.preventDefault();
