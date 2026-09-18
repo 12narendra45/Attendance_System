@@ -68,15 +68,11 @@ This project helps organizations track employee attendance efficiently with:
 
 | Home / Attendance Screen | Admin Dashboard |
 |---|---|
-| <img src="./images/attendance-home.png" alt="Attendance Home Screen" width="420" /> | <img src="./images/admin-dashboard.png" alt="Admin Dashboard" width="420" /> |
-
-| Add Employee Form | Attendance Report Export |
-|---|---|
-| <img src="./images/add-employee.png" alt="Add Employee Form" width="420" /> | <img src="./images/report-export.png" alt="Attendance Report Export" width="420" /> |
+| <img src="./images/employeedashboard.png" alt="Attendance Home Screen" width="420" /> | <img src="./images/admin.png" alt="Admin Dashboard" width="420" /> |
 
 | Daily Attendance Sheet |  |
 |---|---|
-| <img src="./images/daily-sheet.png" alt="Daily Attendance Sheet" width="420" /> |  |
+| <img src="./images/dailyreport.png" alt="Daily Attendance Sheet" width="420" /> |  |
 
 
 
