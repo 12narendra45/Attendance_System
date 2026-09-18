@@ -1,4 +1,3 @@
-import logo from "../assets/logo.png";
 import LocationStatus from "./LocationStatus";
 
 export default function AttendanceForm({
@@ -34,19 +33,18 @@ export default function AttendanceForm({
   return (
     <div className="relative z-10 w-full max-w-md mx-4">
       <div className="glass-effect p-6 rounded-3xl shadow-2xl backdrop-blur-lg border border-cream-300/20">
-        {/* Logo and Company Name */}
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <img src={logo} alt="Company Logo" className="h-16 w-16 object-contain" />
-          <h1 className="text-3xl font-bold text-[#FF9500]">INNOKNOWVEX</h1>
-        </div>
-        
         {/* Location Status */}
         <LocationStatus locationLoading={locationLoading} location={location} />
 
         <h2 className="text-3xl font-bold text-center mb-2 text-[#FF9500]">
           Mark Your Attendance
         </h2>
-        <p className="text-center text-black mb-5 text-sm">Quick and secure attendance tracking</p>
+        <p className="text-center text-black mb-2 text-sm">Quick and secure attendance tracking</p>
+        <div className="mb-5 rounded-xl border border-[#FF9500]/40 bg-[#FFF4E6] px-3 py-2 text-center">
+          <p className="text-xs font-semibold text-[#B45A00]">
+            Note: the backend may take a few seconds to wake up if it is in sleep mode.
+          </p>
+        </div>
 
         <form onSubmit={onSubmit} className="space-y-3">
           <div>

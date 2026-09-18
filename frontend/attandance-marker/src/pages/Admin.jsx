@@ -7,6 +7,7 @@ import DownloadReportForm from "../components/DownloadReportForm";
 import DailySheetForm from "../components/DailySheetForm";
 import LOPModal from "../components/LOPModal";
 import logo from "../assets/logo.png";
+import { API_BASE_URL } from "../config/api";
 
 
 
@@ -48,7 +49,7 @@ export default function Admin(){
      const webtoken=sessionStorage.getItem("webtoken");
      setAddLoading(true);
      try {
-       const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/empregister", {
+       const res = await fetch(`${API_BASE_URL}/emp/empregister`, {
          method: "POST",
          headers: {
            "Content-Type": "application/json",
@@ -94,7 +95,7 @@ export default function Admin(){
       setDownloadLoading(true);
       const webtoken = sessionStorage.getItem("webtoken");
       try{
-        const res=await fetch(`https://attendance-system-k7rg.onrender.com/emp/empdata`,{
+        const res=await fetch(`${API_BASE_URL}/emp/empdata`,{
           method:"POST",
           headers: {
             "Content-Type": "application/json",
@@ -143,7 +144,7 @@ export default function Admin(){
       setDailyDownloadLoading(true);
       const webtoken = sessionStorage.getItem("webtoken");
       try {
-        const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/dailysheet", {
+        const res = await fetch(`${API_BASE_URL}/emp/dailysheet`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -194,7 +195,7 @@ export default function Admin(){
       setLopLoading(true);
       const webtoken = sessionStorage.getItem("webtoken");
       try {
-        const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/marklop", {
+        const res = await fetch(`${API_BASE_URL}/emp/marklop`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -242,9 +243,8 @@ export default function Admin(){
         )}
 
     
-        <div className="absolute top-5 left-1/2 transform -translate-x-1/2 z-10 flex items-center gap-3">
+        <div className="absolute top-5 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center">
           <img src={logo} alt="Logo" className="h-12 w-12 object-contain" />
-          <h1 className="text-2xl font-bold text-[#FF9500]">INNOKNOWVEX</h1>
         </div>
 
       

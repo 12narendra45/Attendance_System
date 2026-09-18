@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Toast from "../components/Toast";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { API_BASE_URL } from "../config/api";
 
 
 
@@ -25,7 +26,7 @@ export default function AllEmployees() {
         const webtoken = sessionStorage.getItem("webtoken");
         setLoading(true);
         try {
-            const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/allemp", {
+            const res = await fetch(`${API_BASE_URL}/emp/allemp`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -67,7 +68,7 @@ export default function AllEmployees() {
     const saveEmp = async (id, Empid) => {
         const webtoken = sessionStorage.getItem("webtoken");
         try {
-            const res = await fetch(`https://attendance-system-k7rg.onrender.com/emp/update/${id}`, {
+            const res = await fetch(`${API_BASE_URL}/emp/update/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -106,7 +107,7 @@ export default function AllEmployees() {
 
         const webtoken = sessionStorage.getItem("webtoken");
         try{
-        const res = await fetch(`https://attendance-system-k7rg.onrender.com/emp/delete/${id}`, {
+        const res = await fetch(`${API_BASE_URL}/emp/delete/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",

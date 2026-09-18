@@ -5,6 +5,7 @@ import BackgroundAnimation from "../components/BackgroundAnimation";
 import AdminLoginModal from "../components/AdminLoginModal";
 import AttendanceForm from "../components/AttendanceForm";
 import PINModal from "../components/PINModal";
+import { API_BASE_URL } from "../config/api";
 
 
 
@@ -77,7 +78,7 @@ export default function Home() {
     const fetchEmployees = async () => {
       setEmployeesLoading(true);
       try {
-        const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/employees-for-attendance", {
+        const res = await fetch(`${API_BASE_URL}/emp/employees-for-attendance`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -113,7 +114,7 @@ export default function Home() {
 
       setLoading(true);
      
-      const verifyRes = await fetch("https://attendance-system-k7rg.onrender.com/emp/verify-pin", {
+      const verifyRes = await fetch(`${API_BASE_URL}/emp/verify-pin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ pin, employeeId: empid }),
@@ -128,7 +129,7 @@ export default function Home() {
       }
 
      
-      const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/markattandance", {
+      const res = await fetch(`${API_BASE_URL}/emp/markattandance`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -204,7 +205,7 @@ export default function Home() {
 
     setAdminLoading(true);
       try {
-      const res = await fetch("https://attendance-system-k7rg.onrender.com/emp/admin", {
+      const res = await fetch(`${API_BASE_URL}/emp/admin`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json" 
